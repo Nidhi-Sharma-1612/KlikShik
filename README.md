@@ -37,7 +37,7 @@ Open a new terminal tab or PowerShell window and run the following command to st
 json-server --watch db.json --port 5000
 ```
 
-### Notes:
+### Note:
 Ensure you have Node.js and npm installed on your machine.
 
 The backend is powered by json-server for quick API prototyping. You can modify the db.json file to customize the data.
