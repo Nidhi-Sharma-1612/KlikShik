@@ -3,10 +3,14 @@ Follow the steps below to set up the project on your local machine.
 
 ## Step 1: Clone the Repository
 Using SSH:
+```
 git clone git@github.com:<username>/<repository-name>.git
+```
 OR
 Using HTTPS:
+```
 git clone https://github.com/<username>/<repository-name>.git
+```
 
 ## Step 2: Change the directory
 After cloning the repository, you need to move into the project’s directory to access its files and run commands. Use the following command:
