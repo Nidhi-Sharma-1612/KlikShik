@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Carousel from "./components/Carousel";
+import UploadUI from "./components/UploadUI";
+import { ThemeProvider, createTheme, CssBaseline, Box } from "@mui/material";
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = React.useState(false);
+
+  const theme = createTheme({
+    palette: {
+      mode: isDarkMode ? "dark" : "light",
+    },
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Header isDarkMode={isDarkMode} onThemeChange={setIsDarkMode} />
+
+      <Box
+        sx={{
+          paddingTop: { xs: "72px", sm: "64px" },
+          padding: 2,
+          minHeight: "80vh",
+        }}
+      >
+        <Carousel />
+        <UploadUI />
+      </Box>
+
+      <Footer />
+    </ThemeProvider>
   );
 }
 
